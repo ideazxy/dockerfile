@@ -10,4 +10,4 @@ VOLUME ["/data"]
 
 ENTRYPOINT ["/bin/etcd"]
 
-CMD ["-data-dir=/data", "-listen-client-urls=http://0.0.0.0:2379,http://0.0.0.0:4001", "-listen-peer-urls=http://0.0.0.0:2380,http://0.0.0.0:7001"]
+CMD ["--data-dir=/data", "--listen-client-urls=http://0.0.0.0:2379,http://0.0.0.0:4001", "--listen-peer-urls=http://0.0.0.0:2380,http://0.0.0.0:7001"]
