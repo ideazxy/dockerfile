@@ -1,4 +1,4 @@
-FROM php:5.5-fpm
+FROM ideazxy/php:5.5
 
 MAINTAINER Yudi <smartzxy@gmail.com>
 
