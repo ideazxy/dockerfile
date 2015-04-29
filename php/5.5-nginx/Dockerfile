@@ -3,7 +3,7 @@ FROM ideazxy/php:5.5
 MAINTAINER Yudi <smartzxy@gmail.com>
 
 RUN apt-get update && \
-    apt-get install -y php5-cli php5-curl php5-gd php5-mcrypt php5-mysql php5-pgsql php5-sqlite php5-redis nginx pwgen supervisor curl git unzip vim && \
+    apt-get install -y nginx pwgen supervisor curl git unzip vim && \
     rm -rf /var/lib/apt/lists/*
 
 #RUN echo "daemon off;" >> /etc/nginx/nginx.conf
