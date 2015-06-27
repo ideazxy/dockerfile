@@ -2,7 +2,7 @@ FROM python:3.4
 
 MAINTAINER Yudi <smartzxy@gmail.com>
 
-RUN pip install uwsgi
+RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --no-cache-dir uwsgi
 
 RUN apt-get update && \
     apt-get install -y nginx pwgen supervisor curl unzip vim && \
@@ -20,7 +20,7 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 ONBUILD COPY requirements.txt /usr/src/app/
-ONBUILD RUN pip install -r requirements.txt
+ONBUILD RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --no-cache-dir -r requirements.txt
 
 ONBUILD COPY . /usr/src/app
 
