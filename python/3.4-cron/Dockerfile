@@ -1,4 +1,4 @@
-FROM ideazxy/python:3.4-nginx
+FROM python:3.4
 
 MAINTAINER Yudi <smartzxy@gmail.com>
 
