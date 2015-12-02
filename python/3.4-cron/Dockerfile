@@ -24,7 +24,5 @@ RUN touch /var/log/cron.log
 ONBUILD COPY requirements.txt /usr/src/app/
 ONBUILD RUN pip install --trusted-host mirrors.aliyun.com -i http://mirrors.aliyun.com/pypi/simple/ --no-cache-dir -r requirements.txt
 
-ONBUILD COPY . /usr/src/app
-
 # Run the command on container startup
 CMD env > /root/env.sh && cron && tail -f /var/log/cron.log
