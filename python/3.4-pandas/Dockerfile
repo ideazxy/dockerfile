@@ -2,7 +2,8 @@ FROM python:3.4.8-alpine3.4
 
 MAINTAINER Yudi <smartzxy@gmail.com>
 
-RUN pip install --no-cache-dir uwsgi pandas
+RUN pip install --no-cache-dir uwsgi
+RUN pip install --no-cache-dir --no-build-isolation pandas
 
 RUN apt-get update && \
     apt-get install -y nginx pwgen supervisor curl unzip vim && \
