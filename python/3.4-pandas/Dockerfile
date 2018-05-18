@@ -2,8 +2,15 @@ FROM python:3.4.8-alpine3.4
 
 MAINTAINER Yudi <smartzxy@gmail.com>
 
-RUN pip install --no-cache-dir uwsgi
-RUN pip install --no-cache-dir --no-build-isolation pandas
+RUN set -e; \
+	apk add --no-cache --virtual .build-deps \
+		gcc \
+		libc-dev \
+		linux-headers \
+	; \
+	pip install --no-cache-dir uwsgi; \
+	pip install --no-cache-dir --no-build-isolation pandas; \
+	apk del .build-deps;
 
 RUN apt-get update && \
     apt-get install -y nginx pwgen supervisor curl unzip vim && \
